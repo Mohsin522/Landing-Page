@@ -1,0 +1,236 @@
+:root {
+    --theme-text-color: #000000;
+    --theme-bg-color: #FFFFFF;
+  }
+
+  /* Dark theme */
+  .dark-theme {
+    --theme-text-color: #FFFFFF;  /* White text for dark theme */
+    --theme-bg-color: #000000;    /* Black background for dark theme */
+    
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: var(--theme-text-color);
+    background-color: var(--theme-bg-color);
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  .toggler button {
+    background-color: var(--theme-bg-color);
+    color: var(--theme-text-color);
+    padding: 10px 20px;
+    border: none;
+    border: 2px solid var(--theme-text-color);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .toggler button:hover {
+    opacity: 0.8;
+  }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--theme-bg-color);
+  padding: 20px 20px;
+  border-bottom: 2px solid var(--theme-text-color);
+}
+
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+  color: var(--theme-text-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .menu-icon {
+  display: none;
+  color: var(--theme-text-color);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.contact_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+}
+.contact_content_side{
+  
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+.contact_form_side{
+  border: 1px solid var(--theme-text-color);
+  border-radius: 8px;
+  padding: 50px 20px;
+  width: 30%;
+  
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+ 
+}
+.form_inner{
+  display: flex;
+  flex-direction: column;
+
+}
+input, button{
+  background: none;
+  border: none;
+  outline: none;
+}
+.form_inner input{
+  margin: 10px 0;
+  height: 36px;
+  border-radius: 6px;
+  width: 100%;
+  padding-left: 10px;
+  border: 2px solid #ccc; /* Adjust color */
+  border-radius: 5px; 
+ 
+
+}
+.form_inner input:focus {
+  border-color: var(--theme-text-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus style */
+}
+
+.form_button:hover {
+  background-color: var(--theme-text-color);
+  color: var(--theme-bg-color);
+}
+.form_button{
+    display: flex;
+    border: 2px solid var(--theme-text-color); /* Adjust color */
+    border-radius: 5px; 
+    height: 32px;
+    color: var(--button-text-color);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 6px;
+    padding: 10px 20px;
+    width: min-content;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-bg-color);
+    color: var(--theme-text-color);
+    padding: 20px;
+    border-top: 2px solid var(--theme-text-color);
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  }
+  
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    display: flex;
+    flex: 1;  /* Ensure all sections take up equal space */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-left p {
+    font-size: 14px;
+  }
+  
+  .footer-center ul,
+  .footer-right ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-center li,
+  .footer-right li {
+    display: inline;
+  }
+  
+  .footer-center a,
+  .footer-right a {
+    color: var(--theme-text-color);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-center a:hover,
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--theme-bg-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .nav-links li {
+    margin: 10px 0;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+  }
+  .contact_form_side
+  {
+    width: 100%;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: none; /* Allow sections to stack vertically */
+    margin-bottom: 10px;
+  }
+
+  .footer-center ul,
+  .footer-right ul {
+    justify-content: center;
+    gap: 10px;
+  }
+}
